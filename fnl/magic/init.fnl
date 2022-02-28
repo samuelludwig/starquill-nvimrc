@@ -4,6 +4,12 @@
              a aniseed.core
              u magic.utils}})
 
+;; ---
+;; Hello, this is a Neovim config specialized for writing-centric activities;
+;; it will host little-to-no programming language support or related niceties.
+;; ---
+
+
 ;;; Introduction
 
 ;; Aniseed compiles this (and all other Fennel files under fnl) into the lua
@@ -26,8 +32,7 @@
 (set nvim.o.sessionoptions "blank,curdir,folds,help,tabpages,winsize")
 (set nvim.o.inccommand :split)
 
-;; Maybe have this only be active in .md/.txt/.wiki buffers?
-;(nvim.ex.set :spell)
+(nvim.ex.set :spell)
 (nvim.ex.set :list)
 
 
@@ -63,36 +68,25 @@
   :Olical/conjure {}
 
   ;; Preloadeds
-  :PeterRincker/vim-argumentative {}
   :airblade/vim-gitgutter {}
-  :clojure-vim/clojure.vim {}
-  :clojure-vim/vim-jack-in {}
-  :easymotion/vim-easymotion {}
   :folke/which-key.nvim {}
-  :guns/vim-sexp {}
   :hrsh7th/nvim-cmp {}
   :itchyny/lightline.vim {}
   :jiangmiao/auto-pairs {:mod :auto-pairs}
-  :gpanders/nvim-parinfer {}
   :junegunn/fzf {}
   :junegunn/fzf.vim {}
   :liuchengxu/vim-better-default {:mod :better-default}
   :mbbill/undotree {}
   :radenling/vim-dispatch-neovim {}
   :srcery-colors/srcery-vim {}
-  :tami5/compe-conjure {}
   :tpope/vim-abolish {}
   :tpope/vim-commentary {}
-  :tpope/vim-dispatch {}
-  :tpope/vim-eunuch {}
   :tpope/vim-fugitive {}
   :tpope/vim-repeat {}
-  :tpope/vim-sexp-mappings-for-regular-people {}
   :tpope/vim-sleuth {}
   :tpope/vim-surround {}
   :tpope/vim-unimpaired {}
   :tpope/vim-vinegar {}
-  :w0rp/ale {:mod :ale}
 
   ;; Colorschemes
   :Th3Whit3Wolf/space-nvim {:mod :space-nvim}
@@ -119,30 +113,16 @@
                                            :requires ["tami5/sqlite.lua"]}
   :nvim-treesitter/nvim-treesitter {:mod :treesitter
                                     :run ":TSUpdate"}
-  :neovim/nvim-lspconfig {:mod :lspconfig}
-  :nvim-treesitter/playground {}
-  :L3MON4D3/LuaSnip {:mod :luasnips}
   :ahmedkhalf/project.nvim {:mod :project-nvim}
-  :folke/trouble.nvim {:mod :trouble-nvim
-                       :requires "kyazdani42/nvim-web-devicons"}
-  :Pocco81/TrueZen.nvim {}
-  :rcarriga/nvim-notify {}
-  :lukas-reineke/indent-blankline.nvim {:mod :blankline}
-  ;:kevinhwang91/nvim-hlslens {}
-
-  ;; LITEE Tools
-  :ldelossa/litee.nvim {:mod :litee}
-  :ldelossa/litee-calltree.nvim {:mod :litee-calltree
-                                 :requires ["ldelossa/litee.nvim"]}
-  :ldelossa/litee-symboltree.nvim {:mod :litee-symboltree
-                                   :requires ["ldelossa/litee.nvim"]}
-  :ldelossa/litee-filetree.nvim {:mod :litee-filetree
-                                 :requires ["ldelossa/litee.nvim"]}
-  :ldelossa/litee-bookmarks.nvim {:mod :litee-bookmarks
-                                  :requires ["ldelossa/litee.nvim"]}
 
   ;; Generic Lang Support
-  :janet-lang/janet.vim {}
+  ;:janet-lang/janet.vim {}
+
+  ;; Writing-Focused Plugins
+  :ellisonleao/glow.nvim {:run ":GlowInstall"} ; md preview
+  :folke/zen-mode.nvim {:mod :zen}
+  :folke/twilight.nvim {:mod :twi}
+  ;latex support to follow..
 
   :wbthomason/packer.nvim {})
 
